@@ -4,6 +4,10 @@
         --secondary: #3498db;
         --light-gray: #ecf0f1;
         --text: #2c3e50;
+        --background: #f8f9fa;
+        --border-radius: 12px;
+        --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        --transition: all 0.3s ease;
     }
 
     body {
@@ -12,107 +16,170 @@
         padding: 0;
         line-height: 1.8;
         color: var(--text);
-        background-color: #f8f9fa;
+        background-color: var(--background);
+        overflow-x: hidden;
     }
 
     header {
         background: var(--primary);
         color: white;
-        padding: 4rem 0 3rem;
+        padding: 5rem 0 4rem;
         margin-bottom: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     header h1 {
         font-weight: 300;
         margin: 0;
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     header p {
         font-weight: 300;
-        opacity: 0.9;
-        margin: 0.5rem 0 0;
+        opacity: 0.85;
+        margin: 1rem 0 0;
+        font-size: 1.125rem;
     }
 
     .container {
-        max-width: 900px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 0 2rem;
     }
 
     section {
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
         background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: transform 0.2s ease;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
     }
 
     h2 {
         color: var(--primary);
         font-weight: 500;
         margin: 0 0 1.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--light-gray);
+        padding-bottom: 0.75rem;
+        border-bottom: 3px solid var(--light-gray);
+        font-size: 2rem;
     }
 
     .contact {
         text-align: center;
         margin: -3rem auto 3rem;
         background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        max-width: 600px;
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        max-width: 700px;
+        transition: transform 0.2s ease;
+    }
+
+    .contact:hover {
+        transform: translateY(-5px);
     }
 
     a {
         color: var(--secondary);
         text-decoration: none;
-        transition: color 0.3s ease;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.3s ease;
     }
 
     a:hover {
         color: var(--primary);
         text-decoration: underline;
+        transform: translateX(3px);
     }
 
     .project-link {
         display: block;
-        padding: 0.8rem;
-        margin: 0.5rem 0;
-        border-left: 3px solid var(--secondary);
-        transition: transform 0.2s ease;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-left: 4px solid var(--secondary);
+        transition: transform 0.2s ease, padding-left 0.2s ease;
     }
 
     .project-link:hover {
-        transform: translateX(5px);
+        transform: translateX(8px);
+        padding-left: 1.2rem;
     }
 
     footer {
         background: var(--primary);
         color: white;
         text-align: center;
-        padding: 2rem 0;
+        padding: 2.5rem 0;
         margin-top: 4rem;
+        font-size: 1rem;
+        box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
     }
 
-    @media (max-width: 768px) {
+    footer a {
+        color: white;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        color: var(--secondary);
+    }
+
+    @media (max-width: 1024px) {
         .container {
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
         
         header {
-            padding: 3rem 0 2rem;
+            padding: 4rem 0 3rem;
         }
         
         section {
-            padding: 1.5rem;
+            padding: 2rem;
         }
         
         .contact {
             margin: -2rem auto 2rem;
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        section {
             padding: 1.5rem;
+        }
+
+        .contact {
+            padding: 1.5rem;
+        }
+
+        footer {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        footer {
+            font-size: 0.8rem;
+            padding: 2rem 0;
         }
     }
 </style>
